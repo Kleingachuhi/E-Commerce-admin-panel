@@ -1,0 +1,13 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Vintage Leather Bag",
+        "description": "The vintage leather bag is handcrafted from premium full-grain leather...",
+        "price": 85.00,
+        "stock": 10,
+        "sku": "VLB-001",
+        "image": "path/to/image.jpg"
+      }
+    ]
+  }
