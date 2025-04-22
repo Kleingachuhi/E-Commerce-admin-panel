@@ -129,113 +129,18 @@
     background-color: rgba(199, 156, 156, 0.329);
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
-  }
-  
-  .container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
- 
-  .btn-edit, .btn-delete, .create-product-button {
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-edit {
-    background-color: #3498db;
-    color: white;
-    margin-right: 10px;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  .btn-delete {
-    background-color: #e74c3c;
-    color: white;
-  }
-  
-  .create-product-button {
-    background-color: #2ecc71;
-    color: white;
-    padding: 12px 25px;
-    font-size: 16px;
-  }
-  
-  .btn-edit:hover {
-    background-color: #2980b9;
-  }
-  
-  .btn-delete:hover {
-    background-color: #c0392b;
-  }
-  
-  .create-product-button:hover {
-    background-color: #27ae60;
-  }
-  
-  .add-product-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 30px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .add-product-title {
-    font-size: 24px;
-    font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .add-product-form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-  
-  .form-section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .section-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #34495e;
-  }
-  
-  .form-input, .form-textarea {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
+.home-page-introduction{
+    max-width: 150px;
+    background-color: rgba(194, 145, 201, 0.5);
+    width: 200px;
+    height: 200px;
     border-radius: 6px;
-    font-size: 14px;
-    transition: border-color 0.3s;
-  }
-  
-  .form-input:focus, .form-textarea:focus {
-    outline: none;
-    border-color: #3498db;
-  }
-  
-  .form-textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-  
-  
+}
+
+.blank-section{
+    background-color: antiquewhite;
+    width: 400px;
+    height: 400px;
+    margin-left: 20%;
+    margin-top:0%;
+}
