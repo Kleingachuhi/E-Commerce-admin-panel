@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './AddProduct.css';
 
 export default function AddProduct() {
   const navigate = useNavigate();
@@ -19,15 +18,13 @@ export default function AddProduct() {
   const [error, setError] = useState('');
   const [imagePreview, setImagePreview] = useState('');
 
+  
   useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const response = await axios.get('http://localhost:3001/categories');
-        setCategories(response.data);
-      } catch (err) {
-        console.error('Error fetching categories:', err);
-      }
-    };
+    const fetchCategories = () =>
+        fetch('http://localhost:3000/Categories')
+      .then(res => res.json())
+      .then(data => setCategories(data))
+      .catch(console.error);
     fetchCategories();
   }, []);
 
@@ -181,10 +178,10 @@ export default function AddProduct() {
                   className="form-select"
                   required
                 >
-                  <option value="">Select category</option>
-                  {categories.map((category) => (
-                    <option key={category} value={category}>{category}</option>
-                  ))}
+              {categories.map((category) => (
+  <option key={category.name} value={category.name}>{category.name}</option>
+))}
+
                 </select>
               </div>
             </div>

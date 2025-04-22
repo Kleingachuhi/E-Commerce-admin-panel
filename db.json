@@ -38,10 +38,10 @@
       "createdAt": "2023-01-01T00:00:00Z"
     }
   ],
-  "categories": [
-    "Electronics",
-    "Fashion",
-    "Home",
-    "Sports"
+  "Categories": [ 
+    { "name": "Electronics" },
+    { "name": "Fashion" },
+    { "name": "Home" },
+    { "name": "Sports" }
   ]
 }
