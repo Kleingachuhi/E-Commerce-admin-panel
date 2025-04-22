@@ -71,7 +71,7 @@ function EditProducts() {
       <h1>Sales Dashboard</h1>
       
       <div className="product-nav">
-        <button onClick={() => navigate('/products/add')}>Add Product</button>
+        <button onClick={() => navigate('/add-product')}>Add Product</button>
         <button onClick={() => navigate('/products')}>Edit Product</button>
       </div>
       
