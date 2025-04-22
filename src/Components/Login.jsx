@@ -48,20 +48,19 @@ function Login() {
     <div className="login-page">
       <h1 className="access-account">Access Account</h1>
       <p className="login-paragraph">Your gateway to seamless access and Management</p>
-
+     
       <input
-        type="text"
-        className="username-input"
-        placeholder="Your username"
-        onChange={handleUserName}
-      />
-      <input
-        type="password"
-        className="password-input"
-        placeholder="Enter your password"
-        onChange={handlePassword}
-      />
-
+      type="text"
+      className="username-input"
+      placeholder="Your username"
+      onChange={handleUserName}
+    />
+    <input
+      type="password"
+      className="password-input"
+      placeholder="Enter your password"
+      onChange={handlePassword}
+    />
       <button className="login-button" onClick={handleClick}>
         Log In
       </button>
