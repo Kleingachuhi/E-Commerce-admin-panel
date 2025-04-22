@@ -1,57 +1,39 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import '../src/App.css';
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const AddProducts = () => {
-  const navigate = useNavigate();
+export default function AddProduct() {
+  const navigate = useNavigate()
   const [product, setProduct] = useState({
     name: '',
     description: '',
     price: '',
     stock: '',
     sku: '',
-    image: null
-  });
+    image: ''
+  })
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setProduct({
       ...product,
       [name]: value
-    });
-  };
+    })
+  }
 
-  const handleImageChange = (e) => {
-    setProduct({
-      ...product,
-      image: e.target.files[0]
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const formData = new FormData();
-      formData.append('name', product.name);
-      formData.append('description', product.description);
-      formData.append('price', product.price);
-      formData.append('stock', product.stock);
-      formData.append('sku', product.sku);
-      if (product.image) {
-        formData.append('image', product.image);
-      }
-
-      await axios.post('http://localhost:3001/products', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-      navigate('/products');
-    } catch (error) {
-      console.error('Error adding product:', error);
-    }
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    fetch('http://localhost:3001/products', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(product)
+    })
+    .then(res => res.json())
+    .then(() => {
+      navigate('/products')
+    })
+  }
 
   return (
     <div className="add-product-container">
@@ -127,18 +109,16 @@ const AddProducts = () => {
         </div>
 
         <div className="form-section">
-          <h2 className="section-title">Product images</h2>
-          <div className="image-upload-container">
-            <label className="image-upload-label">
-              <input
-                type="file"
-                onChange={handleImageChange}
-                className="image-upload-input"
-                accept="image/*"
-              />
-              <span className="image-upload-text">Add an image</span>
-            </label>
-          </div>
+          <h2 className="section-title">Product image URL</h2>
+          <input
+            type="text"
+            name="image"
+            value={product.image}
+            onChange={handleChange}
+            placeholder="Paste image URL"
+            className="form-input"
+            required
+          />
         </div>
 
         <button type="submit" className="create-product-button">
@@ -146,7 +126,5 @@ const AddProducts = () => {
         </button>
       </form>
     </div>
-  );
-};
-
-export default AddProducts;
+  )
+}
