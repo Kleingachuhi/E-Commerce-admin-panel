@@ -1,0 +1,31 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Vintage Leather Bag",
+        "description": "Handcrafted from premium full-grain leather, offering durability and timeless style.",
+        "price": 85.00,
+        "stock": 15,
+        "sku": "VLB-001",
+        "image": "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        "id": 2,
+        "name": "Wireless Headphones",
+        "description": "Premium noise-cancelling wireless headphones with 30-hour battery life.",
+        "price": 199.99,
+        "stock": 22,
+        "sku": "WH-202",
+        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        "id": 3,
+        "name": "Smart Watch",
+        "description": "Fitness tracker with heart rate monitor and GPS tracking.",
+        "price": 159.99,
+        "stock": 8,
+        "sku": "SW-305",
+        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+      }
+    ]
+  }
