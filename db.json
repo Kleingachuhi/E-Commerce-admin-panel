@@ -30,12 +30,79 @@
     {
       "id": 1,
       "name": "Vintage Leather Bag",
-      "description": "Handcrafted from premium full-grain leather, offering durability and timeless style.",
+      "description": "Classic leather bag with a timeless design.",
       "price": 85.00,
       "stock": 15,
       "sku": "VLB-001",
-      "image": "https://example.com/image1.jpg",
-      "createdAt": "2023-01-01T00:00:00Z"
+      "image": "https://onzetrends.co.ke/wp-content/uploads/2025/04/crish-chocolate-brown-scaled.jpg",
+      "createdAt": "2023-01-01T00:00:00Z",
+      "category": "Fashion"
+    },
+    {
+      "id": 2,
+      "name": "Wireless Headphones",
+      "description": "Noise-canceling wireless headphones.",
+      "price": 120.00,
+      "stock": 25,
+      "sku": "WH-002",
+      "image": "https://www.iteystore.co.ke/cdn/shop/files/Sony-WH-1000XM5.jpg?v=1733176151&width=600",
+      "createdAt": "2023-02-15T00:00:00Z",
+      "category": "Electronics"
+    },
+    {
+      "id": 3,
+      "name": "Running Shoes",
+      "description": "Breathable shoes for everyday running.",
+      "price": 95.00,
+      "stock": 40,
+      "sku": "RS-003",
+      "image": "https://i.pinimg.com/736x/10/cb/36/10cb36f9736e20be017f0bb00f7cd4ab.jpg",
+      "createdAt": "2023-03-10T00:00:00Z",
+      "category": "Sports"
+    },
+    {
+      "id": 4,
+      "name": "Smart Thermostat",
+      "description": "Control home temperature remotely.",
+      "price": 150.00,
+      "stock": 10,
+      "sku": "ST-004",
+      "image": "https://i.pinimg.com/736x/c6/70/fc/c670fce2adc8f9c9fca161dd3d498452.jpg",
+      "createdAt": "2023-04-05T00:00:00Z",
+      "category": "Home"
+    },
+    {
+      "id": 5,
+      "name": "LED Desk Lamp",
+      "description": "Minimalist LED lamp with touch control.",
+      "price": 35.00,
+      "stock": 30,
+      "sku": "LDL-005",
+      "image": "https://i.pinimg.com/736x/cf/ae/17/cfae175bafd7f6167c53e541cdcdd3e5.jpg",
+      "createdAt": "2023-05-12T00:00:00Z",
+      "category": "Home"
+    },
+    {
+      "id": 6,
+      "name": "Bluetooth Speaker",
+      "description": "Portable speaker with deep bass.",
+      "price": 60.00,
+      "stock": 22,
+      "sku": "BS-006",
+      "image": "https://i.pinimg.com/736x/eb/d5/d1/ebd5d138a2859c6c2087bae45e6274ba.jpg",
+      "createdAt": "2023-06-18T00:00:00Z",
+      "category": "Electronics"
+    },
+    {
+      "id": 7,
+      "name": "Fitness Tracker",
+      "description": "Tracks steps, sleep, and heart rate.",
+      "price": 49.99,
+      "stock": 50,
+      "sku": "FT-007",
+      "image": "https://i.pinimg.com/736x/32/4c/9f/324c9f682487be5ace4ccba74d624b07.jpg",
+      "createdAt": "2023-07-25T00:00:00Z",
+      "category": "Sports"
     }
   ],
   "Categories": [ 
