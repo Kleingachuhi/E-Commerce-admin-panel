@@ -125,6 +125,17 @@
       "image": "https://i.pinimg.com/736x/c8/0f/73/c80f73ae66aa1213437bb1d2cb37cb7a.jpg",
       "category": "Electronics",
       "createdAt": "2025-04-23T20:07:43.022Z"
+    },
+    {
+      "id": "5f8c",
+      "name": "Samsung S24",
+      "description": "EXpensive but worth it",
+      "price": "100700",
+      "stock": "5",
+      "sku": "SAM-337",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQnhI0sqegw2z1DxV9Ln216cgHXvAI9w3XCMvL-ASi8X_QnJpQd3NGr2mRbIrgghLA4UkveylVEXQtyZAIegbQ6VeAYFhkr4GcT9t2dxZFUmnYADx6eh4Ma1lXXxpm2IupzuM8R_sQ&usqp=CAc",
+      "category": "Electronics",
+      "createdAt": "2025-04-23T21:11:03.073Z"
     }
   ],
   "Categories": [
