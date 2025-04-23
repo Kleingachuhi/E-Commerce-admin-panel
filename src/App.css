@@ -267,8 +267,6 @@ html, body {
   height: 100%;
   margin: 0;
 }
-
-<<<<<<< HEAD
 body {
   display: flex;
   flex-direction: column;
@@ -284,7 +282,6 @@ body {
   box-sizing: border-box;
   margin-top: 0;
 }
-=======
 
 
 .preview-image {
@@ -358,7 +355,77 @@ body {
   cursor: not-allowed;
 }
 
->>>>>>> 25397b53a9fbd3233e625c6e1caa3ee6f2b928d4
+
+.preview-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.image-upload-options {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.upload-text {
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.upload-btn {
+  background: none;
+  border: none;
+  color: #4299e1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.2rem 0;
+}
+
+.upload-btn:hover {
+  text-decoration: underline;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.create-product-btn {
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.create-product-btn:hover {
+  background-color: #3182ce;
+}
+
+.create-product-btn:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
 .error-message {
   color: #e53e3e;
   background-color: #fff5f5;
