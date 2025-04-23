@@ -1,11 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-function ProductsPage() {
+export default function AddProduct() {
   const navigate = useNavigate();
-  const [products, setProducts] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  const [product, setProduct] = useState({
+    name: '',
+    description: '',
+    price: '',
+    stock: '',
+    sku: '',
+    image: '',
+    category: ''
+  });
+
+  const [categories, setCategories] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [imagePreview, setImagePreview] = useState('');
 
   useEffect(() => {
     fetch('http://localhost:3000/products')
@@ -97,4 +110,3 @@ function ProductsPage() {
   );
 }
 
-export default ProductsPage;

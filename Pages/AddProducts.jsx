@@ -80,6 +80,7 @@ export default function AddProduct() {
 
         <div className="form-group">
           <h3 className="section-title">Product Name</h3>
+          <h3 className="section-title">Product name</h3>
           <input
             type="text"
             name="name"
@@ -93,6 +94,8 @@ export default function AddProduct() {
 
         <div className="form-group">
           <h3 className="section-title">Product Description</h3>
+
+          <h3 className="section-title">Product description</h3>
           <textarea
             name="description"
             value={product.description}
@@ -106,6 +109,7 @@ export default function AddProduct() {
         <div className="form-row">
           <div className="form-group">
             <h3 className="section-title">Product Price ($)</h3>
+            <h3 className="section-title">Product price ($)</h3>
             <input
               type="number"
               name="price"
@@ -121,6 +125,7 @@ export default function AddProduct() {
 
           <div className="form-group">
             <h3 className="section-title">Stock Quantity</h3>
+            <h3 className="section-title">Stock quantity</h3>
             <input
               type="number"
               name="stock"
@@ -147,13 +152,12 @@ export default function AddProduct() {
                 className="form-input"
                 required
               />
-              <button
+              <button 
                 type="button"
                 onClick={generateSKU}
                 className="generate-sku-btn"
-              >
+              />
                 Generate
-              </button>
             </div>
           </div>
 
@@ -178,6 +182,8 @@ export default function AddProduct() {
 
         <div className="form-group">
           <h3 className="section-title">Product Image</h3>
+
+          <h3 className="section-title">Product images</h3>
           <input
             type="text"
             name="image"
@@ -205,6 +211,7 @@ export default function AddProduct() {
             disabled={isLoading}
           >
             {isLoading ? 'Creating...' : 'Create Product'}
+            {isLoading ? 'Creating...' : 'Create product'}
           </button>
         </div>
       </form>
