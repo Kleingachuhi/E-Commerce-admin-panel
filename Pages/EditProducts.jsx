@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
@@ -13,13 +14,10 @@ function EditProducts() {
     sku: ''
   });
 
-  // Fetch product data when component mounts or productId changes
   useEffect(() => {
-    // In a real app, you would fetch from your API
-    // This is a mock implementation
+   
     const fetchProduct = async () => {
       try {
-        // Mock data - replace with actual API call
         const mockProducts = [
           {
             id: '1',
@@ -59,7 +57,6 @@ function EditProducts() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the updated product to your API
     console.log('Updated product:', product);
     alert('Product updated successfully!');
     navigate('/products');
@@ -71,6 +68,7 @@ function EditProducts() {
       
       <div className="product-nav">
         <button onClick={() => navigate('/products/add')}>Add Product</button>
+        <button onClick={() => navigate('/add-product')}>Add Product</button>
         <button onClick={() => navigate('/products')}>Edit Product</button>
       </div>
       

@@ -45,3 +45,38 @@
     { "name": "Sports" }
   ]
 }
+
+    "users": [
+      {
+        "id": 1,
+        "username": "abigael",
+        "password": "abigael"
+      },
+      {
+        "id": 2,
+        "username": "klein",
+        "password": "klein"
+      },
+      {
+        "id": 3,
+        "username": "joseph",
+        "password": "joseph"
+      },
+      {
+        "id": 4,
+        "username": "kelly",
+        "password": "kelly"
+      },
+      {
+        "id": 5,
+        "username": "rodgers",
+        "password": "rodgers"
+      }
+    ]
+  }
+  
+  "products": [],
+  "categories": [],
+  "users": []
+}
+
