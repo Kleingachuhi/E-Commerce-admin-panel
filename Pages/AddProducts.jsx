@@ -202,12 +202,6 @@ export default function AddProduct() {
                   <div className="image-overlay">Preview</div>
                 </div>
               )}
-              <div className="image-upload-options">
-                <span className="upload-text">or</span>
-                <button type="button" className="upload-btn">
-                  Upload an image
-                </button>
-              </div>
             </div>
 
             <div className="form-actions">
