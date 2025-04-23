@@ -129,6 +129,7 @@ body {
 .nav-bar:hover{
   background-color: rgba(199, 156, 156, 0.329);
 }
+
 .product-form-card {
   background-color: #f8fafc;
   border-radius: 10px;
@@ -392,24 +393,6 @@ body {
   margin-top: 0.5rem;
 }
 
-.upload-text {
-  font-size: 0.9rem;
-  color: #718096;
-}
-
-.upload-btn {
-  background: none;
-  border: none;
-  color: #4299e1;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 0.2rem 0;
-}
-
-.upload-btn:hover {
-  text-decoration: underline;
-}
 
 .form-actions {
   display: flex;
