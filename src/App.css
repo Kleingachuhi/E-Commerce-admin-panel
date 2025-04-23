@@ -3,7 +3,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 116vh
+  height: 116vh;
 }
 
 .login-page {
@@ -313,6 +313,79 @@ body {
   cursor: not-allowed;
 }
 
+
+
+.preview-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.image-upload-options {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.upload-text {
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.upload-btn {
+  background: none;
+  border: none;
+  color: #4299e1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.2rem 0;
+}
+
+.upload-btn:hover {
+  text-decoration: underline;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.create-product-btn {
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.create-product-btn:hover {
+  background-color: #3182ce;
+}
+
+.create-product-btn:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
 .error-message {
   color: #e53e3e;
   background-color: #fff5f5;
@@ -514,6 +587,26 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+}
+
+.products-list-container {
+  margin-top: 20px;
+}
+
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.product-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
 }
 
 .products-list-container {
