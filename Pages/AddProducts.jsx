@@ -122,7 +122,7 @@ export default function AddProduct() {
                   onChange={handleChange}
                   placeholder="Insert product price"
                   className="form-input"
-                  step="0.01"
+                  step="500"
                   min="0"
                   required
                 />
