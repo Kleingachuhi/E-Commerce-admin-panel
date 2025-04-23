@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "users": [
       {
         "id": 1,
@@ -28,3 +29,10 @@
     ]
   }
   
+=======
+  "products": [],
+  "categories": [],
+  "users": []
+}
+
+>>>>>>> Set up e-commerce admin panel with CRUD functionality
