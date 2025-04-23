@@ -80,9 +80,6 @@ export default function AddProduct() {
   };
 
   return (
-    <div className="dashboard-container">
-      <div className="sales-dashboard">
-        <h1 className="dashboard-title">Sales Dashboard</h1>
         
         <div className="product-form-card">
           <h2 className="form-header">New product</h2>
@@ -215,7 +212,5 @@ export default function AddProduct() {
             </div>
           </form>
         </div>
-      </div>
-    </div>
   );
 }
