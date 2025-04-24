@@ -72,7 +72,6 @@ export default function AddProduct() {
   }
 
   return (
-
     <div className="product-form-card">
       <h2 className="form-header">New product</h2>
       <form onSubmit={handleSubmit} className="product-form">
@@ -90,70 +89,6 @@ export default function AddProduct() {
             required
           />
         </div>
-
-        
-        <div className="product-form-card">
-          <h2 className="form-header">New product</h2>
-          
-          <form onSubmit={handleSubmit} className="product-form">
-            {error && <div className="error-message">{error}</div>}
-
-            <div className="form-group">
-              <h3 className="section-title">Product name</h3>
-              <input
-                type="text"
-                name="name"
-                value={product.name}
-                onChange={handleChange}
-                placeholder="Insert product name"
-                className="form-input"
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <h3 className="section-title">Product description</h3>
-              <textarea
-                name="description"
-                value={product.description}
-                onChange={handleChange}
-                placeholder="Brief description of the product"
-                className="form-textarea"
-                rows="4"
-              />
-            </div>
-
-            <div className="form-row">
-              <div className="form-group">
-                <h3 className="section-title">Product price ($)</h3>
-                <input
-                  type="number"
-                  name="price"
-                  value={product.price}
-                  onChange={handleChange}
-                  placeholder="Insert product price"
-                  className="form-input"
-                  step="0.01"
-                  min="0"
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <h3 className="section-title">Stock quantity</h3>
-                <input
-                  type="number"
-                  name="stock"
-                  value={product.stock}
-                  onChange={handleChange}
-                  placeholder="Insert stock quantity"
-                  className="form-input"
-                  min="0"
-                  required
-                />
-              </div>
-            </div>
-
 
         <div className="form-group">
           <h3 className="section-title">Product description</h3>
@@ -211,18 +146,6 @@ export default function AddProduct() {
                 className="form-input"
                 required
               />
-
-
-              {imagePreview && (
-                <div className="image-preview">
-                  <img src={imagePreview} alt="Product preview" className="preview-image" />
-                  <div className="image-overlay">Preview</div>
-                </div>
-              )}
-            </div>
-
-            <div className="form-actions">
-
               <button 
                 type="button" 
                 onClick={generateSKU}
@@ -283,9 +206,8 @@ export default function AddProduct() {
             {isLoading ? 'Creating...' : 'Create product'}
           </button>
         </div>
-
       </form>
     </div>
-
   );
 }
+
