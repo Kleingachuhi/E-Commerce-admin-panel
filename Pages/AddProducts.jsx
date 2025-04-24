@@ -22,14 +22,14 @@ export default function AddProduct() {
 
   useEffect(() => {
     fetch('http://localhost:3000/Categories')
-      .then(res => res.json())
-      .then(data => setCategories(data))
+      .then((res) => res.json())
+      .then((data) => setCategories(data))
       .catch(console.error);
   }, []);
 
   function handleChange(e) {
     const { name, value } = e.target;
-    setProduct(prev => ({ ...prev, [name]: value }));
+    setProduct((prev) => ({ ...prev, [name]: value }));
 
     if (name === 'image') {
       setImagePreview(value);
@@ -40,7 +40,7 @@ export default function AddProduct() {
     const prefix = product.name.substring(0, 3).toUpperCase();
     const randomNum = Math.floor(100 + Math.random() * 900);
     const newSku = `${prefix}-${randomNum}`;
-    setProduct(prev => ({ ...prev, sku: newSku }));
+    setProduct((prev) => ({ ...prev, sku: newSku }));
   }
 
   async function handleSubmit(e) {
@@ -49,7 +49,7 @@ export default function AddProduct() {
     setError('');
 
     if (!product.name || !product.price || !product.category) {
-      setError('Name, price, and category are required');
+      setError('Name, price, and category are required.');
       setIsLoading(false);
       return;
     }
@@ -65,7 +65,7 @@ export default function AddProduct() {
         navigate('/products');
       }
     } catch (err) {
-      setError(err.response?.data?.message || err.message || 'Failed to create product');
+      setError(err.response?.data?.message || err.message || 'Failed to create product.');
     } finally {
       setIsLoading(false);
     }
@@ -73,12 +73,13 @@ export default function AddProduct() {
 
   return (
     <div className="product-form-card">
-      <h2 className="form-header">New product</h2>
+      <h2 className="form-header">New Product</h2>
+
       <form onSubmit={handleSubmit} className="product-form">
         {error && <div className="error-message">{error}</div>}
 
         <div className="form-group">
-          <h3 className="section-title">Product name</h3>
+          <h3 className="section-title">Product Name</h3>
           <input
             type="text"
             name="name"
@@ -89,71 +90,9 @@ export default function AddProduct() {
             required
           />
         </div>
-        
-        <div className="product-form-card">
-          <h2 className="form-header">New product</h2>
-          
-          <form onSubmit={handleSubmit} className="product-form">
-            {error && <div className="error-message">{error}</div>}
-
-            <div className="form-group">
-              <h3 className="section-title">Product name</h3>
-              <input
-                type="text"
-                name="name"
-                value={product.name}
-                onChange={handleChange}
-                placeholder="Insert product name"
-                className="form-input"
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <h3 className="section-title">Product description</h3>
-              <textarea
-                name="description"
-                value={product.description}
-                onChange={handleChange}
-                placeholder="Brief description of the product"
-                className="form-textarea"
-                rows="4"
-              />
-            </div>
-
-            <div className="form-row">
-              <div className="form-group">
-                <h3 className="section-title">Product price ($)</h3>
-                <input
-                  type="number"
-                  name="price"
-                  value={product.price}
-                  onChange={handleChange}
-                  placeholder="Insert product price"
-                  className="form-input"
-                  step="500"
-                  min="0"
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <h3 className="section-title">Stock quantity</h3>
-                <input
-                  type="number"
-                  name="stock"
-                  value={product.stock}
-                  onChange={handleChange}
-                  placeholder="Insert stock quantity"
-                  className="form-input"
-                  min="0"
-                  required
-                />
-              </div>
-            </div>
 
         <div className="form-group">
-          <h3 className="section-title">Product description</h3>
+          <h3 className="section-title">Product Description</h3>
           <textarea
             name="description"
             value={product.description}
@@ -166,7 +105,7 @@ export default function AddProduct() {
 
         <div className="form-row">
           <div className="form-group">
-            <h3 className="section-title">Product price ($)</h3>
+            <h3 className="section-title">Product Price ($)</h3>
             <input
               type="number"
               name="price"
@@ -181,7 +120,7 @@ export default function AddProduct() {
           </div>
 
           <div className="form-group">
-            <h3 className="section-title">Stock quantity</h3>
+            <h3 className="section-title">Stock Quantity</h3>
             <input
               type="number"
               name="stock"
@@ -208,17 +147,8 @@ export default function AddProduct() {
                 className="form-input"
                 required
               />
-              {imagePreview && (
-                <div className="image-preview">
-                  <img src={imagePreview} alt="Product preview" className="preview-image" />
-                  <div className="image-overlay">Preview</div>
-                </div>
-              )}
-            </div>
-
-            <div className="form-actions">
-              <button 
-                type="button" 
+              <button
+                type="button"
                 onClick={generateSKU}
                 className="generate-sku-btn"
               >
@@ -247,7 +177,7 @@ export default function AddProduct() {
         </div>
 
         <div className="form-group">
-          <h3 className="section-title">Product images</h3>
+          <h3 className="section-title">Product Image</h3>
           <input
             type="text"
             name="image"
@@ -274,11 +204,10 @@ export default function AddProduct() {
             className="create-product-btn"
             disabled={isLoading}
           >
-            {isLoading ? 'Creating...' : 'Create product'}
+            {isLoading ? 'Creating...' : 'Create Product'}
           </button>
         </div>
       </form>
     </div>
   );
 }
-

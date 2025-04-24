@@ -9,58 +9,20 @@ function ProductsPage() {
 
   useEffect(() => {
     fetch('http://localhost:3000/products')
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setProducts(data);
         setFilteredProducts(data); 
-      })
-      .catch(err => console.error('Error fetching products:', err));
+            })
+      .catch((err) => console.error('Error fetching products:', err));
   }, []);
-
-  const handleEdit = (product) => {
-    navigate('/edit-product', { state: { product } });
-  };
-
-  return (
-    <div className="products-container">
-      <h2>Products List</h2>
-      <table className="product-table">
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map(product => (
-            <tr key={product.id}>
-              <td>
-                {product.image && (
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    style={{ width: '120px', height: '120px', objectFit: 'cover', borderRadius: '10px' }}
-                  />
-                )}
-              </td>
-              <td>{product.name}</td>
-              <td>{product.category}</td>
-              <td>{product.price}</td>
-              <td>
-                <button onClick={() => handleEdit(product)} className="btn-edit">
-                  ✏️ Edit
-                </button>
-              </td>
 
   useEffect(() => {
     if (searchTerm.trim() === '') {
       setFilteredProducts(products);
     } else {
       const lowerSearch = searchTerm.toLowerCase();
-      const filtered = products.filter(product =>
+      const filtered = products.filter((product) =>
         product.name.toLowerCase().includes(lowerSearch)
       );
       setFilteredProducts(filtered);
@@ -68,7 +30,7 @@ function ProductsPage() {
   }, [searchTerm, products]);
 
   const handleEdit = (id) => {
-    navigate('/edit-product', { state: { productId: id } });
+    navigate(`/edit-product/${id}`);
   };
 
   return (
@@ -97,7 +59,7 @@ function ProductsPage() {
           </thead>
           <tbody>
             {filteredProducts.length > 0 ? (
-              filteredProducts.map(product => (
+              filteredProducts.map((product) => (
                 <tr key={product.id}>
                   <td>
                     {product.image && (
