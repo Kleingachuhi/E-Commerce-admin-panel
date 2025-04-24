@@ -354,6 +354,16 @@ body {
   background-color: #a0aec0;
   cursor: not-allowed;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 
 
 .preview-image {
@@ -425,6 +435,17 @@ body {
 .create-product-btn:disabled {
   background-color: #a0aec0;
   cursor: not-allowed;
+}
+
+.product-form-container {
+  flex: 1;
+  padding: 1rem;
+}
+
+.product-form-card {
+  height: 100%;
+  box-sizing: border-box;
+  margin-top: 0;
 }
 .error-message {
   color: #e53e3e;

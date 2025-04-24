@@ -17,6 +17,44 @@ function ProductsPage() {
       .catch(err => console.error('Error fetching products:', err));
   }, []);
 
+  const handleEdit = (product) => {
+    navigate('/edit-product', { state: { product } });
+  };
+
+  return (
+    <div className="products-container">
+      <h2>Products List</h2>
+      <table className="product-table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map(product => (
+            <tr key={product.id}>
+              <td>
+                {product.image && (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    style={{ width: '120px', height: '120px', objectFit: 'cover', borderRadius: '10px' }}
+                  />
+                )}
+              </td>
+              <td>{product.name}</td>
+              <td>{product.category}</td>
+              <td>{product.price}</td>
+              <td>
+                <button onClick={() => handleEdit(product)} className="btn-edit">
+                  ✏️ Edit
+                </button>
+              </td>
+
   useEffect(() => {
     if (searchTerm.trim() === '') {
       setFilteredProducts(products);
