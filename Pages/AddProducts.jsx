@@ -80,9 +80,6 @@ export default function AddProduct() {
   };
 
   return (
-    <div className="dashboard-container">
-      <div className="sales-dashboard">
-        <h1 className="dashboard-title">Sales Dashboard</h1>
         
         <div className="product-form-card">
           <h2 className="form-header">New product</h2>
@@ -125,7 +122,7 @@ export default function AddProduct() {
                   onChange={handleChange}
                   placeholder="Insert product price"
                   className="form-input"
-                  step="0.01"
+                  step="500"
                   min="0"
                   required
                 />
@@ -202,12 +199,6 @@ export default function AddProduct() {
                   <div className="image-overlay">Preview</div>
                 </div>
               )}
-              <div className="image-upload-options">
-                <span className="upload-text">or</span>
-                <button type="button" className="upload-btn">
-                  Upload an image
-                </button>
-              </div>
             </div>
 
             <div className="form-actions">
@@ -221,7 +212,5 @@ export default function AddProduct() {
             </div>
           </form>
         </div>
-      </div>
-    </div>
   );
 }
