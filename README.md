@@ -99,7 +99,7 @@ Login using any of the test credentials above to access the dashboard.
 📄 License
 MIT License
 
-Copyright (c) 2025 Klein
+Copyright (c) 2025 Joseph
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
