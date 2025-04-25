@@ -16,7 +16,7 @@ function EditProducts() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('https://e-commerce-admin-json.vercel.app/Categories')
+    fetch('http://localhost:3000/Categories')
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error('Error fetching categories:', err));
@@ -25,7 +25,7 @@ function EditProducts() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`https://e-commerce-admin-json.vercel.app/products/${productId}`);
+        const response = await fetch(`http://localhost:3000/products/${productId}`);
         if (!response.ok) throw new Error('Product not found');
         const data = await response.json();
         setProduct(data); 
@@ -62,7 +62,7 @@ function EditProducts() {
     }
 
     try {
-      const response = await fetch(`https://e-commerce-admin-json.vercel.app/products/${productId}`, {
+      const response = await fetch(`http://localhost:3000/products/${productId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
