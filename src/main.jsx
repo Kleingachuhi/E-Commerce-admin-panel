@@ -2,17 +2,16 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.jsx'
-import HomePage from './Components/HomePage.jsx'
-import ErrorPage from './Components/ErrorPage.jsx'
-import Login from './Components/Login.jsx'
-import NavBar from './Components/NavBar.jsx'
-import Products from '../Pages/Products.jsx'
-import AddProducts from '../Pages/AddProducts.jsx'
-import EditProducts from '../Pages/EditProducts.jsx'
 import HomeNav from './Components/NavBars/HomeNav.jsx'
 import ProductsNav from './Components/NavBars/ProductsNav'
 import AddNav from './Components/NavBars/AddNav.jsx'
 import EditNav from './Components/NavBars/EditNav.jsx'
+import ErrorPage from './Components/Pages/ErrorPage.jsx'
+import HomePage from './Components/Pages/HomePage.jsx'
+import ProductsPage from './Components/Pages/Products.jsx'
+import AddProduct from './Components/Pages/AddProducts.jsx'
+import EditProducts from './Components/Pages/EditProducts.jsx'
+import Login from './Components/Pages/Login.jsx'
 const router = createBrowserRouter(
   [
     {
@@ -34,7 +33,7 @@ const router = createBrowserRouter(
       element: (
         <>
           <ProductsNav />
-          <Products />
+          <ProductsPage />
         </>
       ),
     },
@@ -43,7 +42,7 @@ const router = createBrowserRouter(
       element: (
         <>
           <AddNav />
-          <AddProducts />
+          <AddProduct />
         </>
       ),
     },
