@@ -48,14 +48,23 @@ const router = createBrowserRouter(
       ),
     },
     {
-      path: 'edit-product',
+      path:'edit-product',
+      element: (<>
+        <EditNav  />
+         <EditProducts />
+         </>
+      )
+    },
+    {
+      path: 'edit-product/:productId',
       element: (
         <>
           <EditNav />
           <EditProducts />
         </>
       ),
-    },
+    }
+    
   ],
   {
     future: {

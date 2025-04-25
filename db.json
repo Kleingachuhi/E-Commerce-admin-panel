@@ -1,37 +1,37 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "abigael",
       "password": "abigael"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "klein",
       "password": "klein"
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "kelly",
       "password": "kelly"
     },
     {
-      "id": 4,
+      "id": "4",
       "username": "joseph",
       "password": "joseph"
     },
     {
-      "id": 5,
+      "id": "5",
       "username": "rodgers",
       "password": "rodgers"
     }
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Vintage Leather Bag",
       "description": "Classic leather bag with a timeless design.",
-      "price": 85.00,
+      "price": "1000",
       "stock": 15,
       "sku": "VLB-001",
       "image": "https://onzetrends.co.ke/wp-content/uploads/2025/04/crish-chocolate-brown-scaled.jpg",
@@ -39,10 +39,10 @@
       "category": "Fashion"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Wireless Headphones",
       "description": "Noise-canceling wireless headphones.",
-      "price": 120.00,
+      "price": 120,
       "stock": 25,
       "sku": "WH-002",
       "image": "https://www.iteystore.co.ke/cdn/shop/files/Sony-WH-1000XM5.jpg?v=1733176151&width=600",
@@ -50,10 +50,10 @@
       "category": "Electronics"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Running Shoes",
       "description": "Breathable shoes for everyday running.",
-      "price": 95.00,
+      "price": 95,
       "stock": 40,
       "sku": "RS-003",
       "image": "https://i.pinimg.com/736x/10/cb/36/10cb36f9736e20be017f0bb00f7cd4ab.jpg",
@@ -61,10 +61,10 @@
       "category": "Sports"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Smart Thermostat",
       "description": "Control home temperature remotely.",
-      "price": 150.00,
+      "price": 150,
       "stock": 10,
       "sku": "ST-004",
       "image": "https://i.pinimg.com/736x/c6/70/fc/c670fce2adc8f9c9fca161dd3d498452.jpg",
@@ -72,10 +72,10 @@
       "category": "Home"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "LED Desk Lamp",
       "description": "Minimalist LED lamp with touch control.",
-      "price": 35.00,
+      "price": 35,
       "stock": 30,
       "sku": "LDL-005",
       "image": "https://i.pinimg.com/736x/cf/ae/17/cfae175bafd7f6167c53e541cdcdd3e5.jpg",
@@ -83,10 +83,10 @@
       "category": "Home"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Bluetooth Speaker",
       "description": "Portable speaker with deep bass.",
-      "price": 60.00,
+      "price": 60,
       "stock": 22,
       "sku": "BS-006",
       "image": "https://i.pinimg.com/736x/eb/d5/d1/ebd5d138a2859c6c2087bae45e6274ba.jpg",
@@ -94,7 +94,7 @@
       "category": "Electronics"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Fitness Tracker",
       "description": "Tracks steps, sleep, and heart rate.",
       "price": 49.99,
@@ -103,12 +103,57 @@
       "image": "https://i.pinimg.com/736x/32/4c/9f/324c9f682487be5ace4ccba74d624b07.jpg",
       "createdAt": "2023-07-25T00:00:00Z",
       "category": "Sports"
+    },
+    {
+      "id": "daa4",
+      "name": "Samsung S24",
+      "description": "Expensive but worth it",
+      "price": "107000",
+      "stock": "4",
+      "sku": "SAM-234",
+      "image": "https://gadgetsleo.com/core/webp-express/webp-images/uploads/2024/02/Samsung-Galaxy-S24-Ultra-Titanium-Black.jpg.webp",
+      "category": "Electronics",
+      "createdAt": "2025-04-23T19:59:47.566Z"
+    },
+    {
+      "id": "d64c",
+      "name": "HP ZBook",
+      "description": "A very convenient laptop",
+      "price": "79000",
+      "stock": "3",
+      "sku": "HP -760",
+      "image": "https://i.pinimg.com/736x/c8/0f/73/c80f73ae66aa1213437bb1d2cb37cb7a.jpg",
+      "category": "Electronics",
+      "createdAt": "2025-04-23T20:07:43.022Z"
+    },
+    {
+      "id": "5f8c",
+      "name": "Samsung S24",
+      "description": "EXpensive but worth it",
+      "price": "100700",
+      "stock": "5",
+      "sku": "SAM-337",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQnhI0sqegw2z1DxV9Ln216cgHXvAI9w3XCMvL-ASi8X_QnJpQd3NGr2mRbIrgghLA4UkveylVEXQtyZAIegbQ6VeAYFhkr4GcT9t2dxZFUmnYADx6eh4Ma1lXXxpm2IupzuM8R_sQ&usqp=CAc",
+      "category": "Electronics",
+      "createdAt": "2025-04-23T21:11:03.073Z"
     }
   ],
-  "Categories": [ 
-    { "name": "Electronics" },
-    { "name": "Fashion" },
-    { "name": "Home" },
-    { "name": "Sports" }
+  "Categories": [
+    {
+      "name": "Electronics",
+      "id": "6262"
+    },
+    {
+      "name": "Fashion",
+      "id": "0c57"
+    },
+    {
+      "name": "Home",
+      "id": "bc53"
+    },
+    {
+      "name": "Sports",
+      "id": "dff5"
+    }
   ]
 }

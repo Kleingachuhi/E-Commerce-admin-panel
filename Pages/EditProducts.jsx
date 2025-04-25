@@ -1,17 +1,28 @@
+
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 function EditProducts() {
-  const { productId } = useParams();
-  const navigate = useNavigate();
-  const [product, setProduct] = useState({
+  const { productId } = useParams();  
+    const navigate = useNavigate();     
+      const [product, setProduct] = useState({
     name: '',
     category: '',
     description: '',
     price: '',
-    image: null,
+    image: '',
     sku: ''
   });
+  const [categories, setCategories] = useState([]);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    fetch('http://localhost:3000/Categories')
+      .then((res) => res.json())
+      .then((data) => setCategories(data))
+      .catch((err) => console.error('Error fetching categories:', err));
+  }, []);
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -33,8 +44,13 @@ function EditProducts() {
           console.error('Product not found');
           navigate('/products');
         }
+        const response = await fetch(`http://localhost:3000/products/${productId}`);
+        if (!response.ok) throw new Error('Product not found');
+        const data = await response.json();
+        setProduct(data); 
       } catch (error) {
         console.error('Error fetching product:', error);
+        navigate('/products');  
       }
     };
 
@@ -43,30 +59,54 @@ function EditProducts() {
     }
   }, [productId, navigate]);
 
+  useEffect(() => {
+    fetch('http://localhost:3000/Categories')
+      .then((res) => res.json())
+      .then((data) => setCategories(data))
+      .catch((err) => console.error('Error fetching categories:', err));
+  }, []);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setProduct(prev => ({ ...prev, [name]: value }));
+    setProduct((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFileChange = (e) => {
-    setProduct(prev => ({ ...prev, image: e.target.files[0] }));
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Updated product:', product);
-    alert('Product updated successfully!');
-    navigate('/products');
+    setError('');
+
+    if (!product.name || !product.price || !product.category) {
+      setError('Name, price, and category are required.');
+      return;
+    }
+
+    try {
+      const response = await fetch(`http://localhost:3000/products/${productId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(product),
+      });
+
+      if (!response.ok) throw new Error('Update failed');
+      navigate('/products');  
+    } catch (error) {
+      console.error('Error updating product:', error);
+      setError('Failed to update product.');
+    }
   };
 
   return (
     <div className="edit-product-container">
-      
+
       <hr className="divider" />
-      
+
       <div className="edit-product-form">
         <h2>Edit Product</h2>
-        
+
+        {error && <div className="error-message">{error}</div>}
+
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Product Name</label>
@@ -76,33 +116,23 @@ function EditProducts() {
               name="name"
               value={product.name}
               onChange={handleInputChange}
+              placeholder="Enter product name"
               required
             />
           </div>
-          
+
           <div className="form-group">
-            <label htmlFor="category">Category</label>
-            <input
-              type="text"
-              id="category"
-              name="category"
-              value={product.category}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-          
-          <div className="form-group">
-            <label htmlFor="description">Product Description</label>
+            <label htmlFor="description">Description</label>
             <textarea
               id="description"
               name="description"
               value={product.description}
               onChange={handleInputChange}
+              placeholder="Enter product description"
               required
             />
           </div>
-          
+
           <div className="form-group">
             <label htmlFor="price">Price</label>
             <input
@@ -111,37 +141,62 @@ function EditProducts() {
               name="price"
               value={product.price}
               onChange={handleInputChange}
+              placeholder="Enter product price"
               step="0.01"
               min="0"
               required
             />
           </div>
-          
+
           <div className="form-group">
-            <label>Product Image</label>
-            <div className="file-input">
-              <input
-                type="file"
-                id="image"
-                onChange={handleFileChange}
-                accept="image/*"
-              />
-              <label htmlFor="image" className="file-label">
-                {product.image ? product.image.name : 'No file chosen'}
-              </label>
-              <button type="button" className="file-button">
-                Choose File
-              </button>
-            </div>
+            <label htmlFor="sku">SKU</label>
+            <input
+              type="text"
+              id="sku"
+              name="sku"
+              value={product.sku}
+              onChange={handleInputChange}
+              placeholder="Enter SKU"
+            />
           </div>
-          
+
           <div className="form-group">
-            <label>Available SKU: {product.sku}</label>
+            <label htmlFor="category">Category</label>
+            <select
+              id="category"
+              name="category"
+              value={product.category}
+              onChange={handleInputChange}
+              required
+            >
+              <option value="">Select Category</option>
+              {categories.map((category) => (
+                <option key={category.name} value={category.name}>
+                  {category.name}
+                </option>
+              ))}
+            </select>
           </div>
-          
+
+          <div className="form-group">
+            <label htmlFor="image">Image URL</label>
+            <input
+              type="text"
+              id="image"
+              name="image"
+              value={product.image}
+              onChange={handleInputChange}
+              placeholder="Enter image URL"
+            />
+            {product.image && (
+              <div className="image-preview">
+                <img src={product.image} alt="Product" className="preview-image" />
+              </div>
+            )}
+          </div>
+
           <div className="form-actions">
-            <button type="submit" className="save-button">Save Changes</button>
-            <button type="button" onClick={() => navigate('/products')} className="cancel-button">Cancel</button>
+            <button type="submit">Update Product</button>
           </div>
         </form>
       </div>

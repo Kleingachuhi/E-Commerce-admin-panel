@@ -3,7 +3,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 116vh;
+  height: 176vh;
 }
 
 .login-page {
@@ -19,6 +19,7 @@ body {
   margin-left: 29%;
   margin-top: 8%;
 }
+
 
 .access-account {
   color: black;
@@ -354,6 +355,16 @@ body {
   background-color: #a0aec0;
   cursor: not-allowed;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 
 
 .preview-image {
@@ -381,24 +392,6 @@ body {
   margin-top: 0.5rem;
 }
 
-.upload-text {
-  font-size: 0.9rem;
-  color: #718096;
-}
-
-.upload-btn {
-  background: none;
-  border: none;
-  color: #4299e1;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 0.2rem 0;
-}
-
-.upload-btn:hover {
-  text-decoration: underline;
-}
 
 .form-actions {
   display: flex;
@@ -425,6 +418,17 @@ body {
 .create-product-btn:disabled {
   background-color: #a0aec0;
   cursor: not-allowed;
+}
+
+.product-form-container {
+  flex: 1;
+  padding: 1rem;
+}
+
+.product-form-card {
+  height: 100%;
+  box-sizing: border-box;
+  margin-top: 0;
 }
 .error-message {
   color: #e53e3e;
@@ -476,15 +480,175 @@ body {
   padding: 6px 12px;
   font-size: 13px;
 }
+  
+
+.products-list-container {
+  margin-top: 20px;
+}
+
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.product-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.product-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+}
+
+.product-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.edit-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
 
 
 .edit-product-container {
-  max-width: 800px;
+  max-width: 1700px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0px;
   font-family: Arial, sans-serif;
 }
 
+.product-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.product-nav button {
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-nav button:hover {
+  background-color: #e0e0e0;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+.edit-product-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-product-form h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.file-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-input input[type="file"] {
+  display: none;
+}
+
+.file-label {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px dashed #ddd;
+  border-radius: 4px;
+}
+
+.file-button {
+  padding: 10px 15px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.file-button:hover {
+  background-color: #e0e0e0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.save-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+}
+
+.cancel-button {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #d32f2f;
+}
+  
 .product-nav {
   display: flex;
   gap: 10px;
@@ -647,7 +811,6 @@ body {
   text-align: center;
 }
 
-
 .products-list-container {
   margin-top: 20px;
 }
@@ -687,7 +850,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #f5f5f591;
 }
 
 .navbar {
@@ -904,14 +1067,15 @@ body {
 
 .products-container {
   width: 100%;
-  max-width: 1200px;
-  margin: auto;
+  max-width: none;
+  margin: 0;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   margin-top: 10px;
 }
+
 
 .product-table {
   width: 100%;
@@ -950,10 +1114,4 @@ body {
 
 .btn-edit:hover {
   background-color: #3730a3;
-}
-
-.edit-product-form {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
 }

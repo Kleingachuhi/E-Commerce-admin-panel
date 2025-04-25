@@ -9,12 +9,12 @@ function ProductsPage() {
 
   useEffect(() => {
     fetch('http://localhost:3000/products')
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setProducts(data);
         setFilteredProducts(data); 
-      })
-      .catch(err => console.error('Error fetching products:', err));
+            })
+      .catch((err) => console.error('Error fetching products:', err));
   }, []);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function ProductsPage() {
       setFilteredProducts(products);
     } else {
       const lowerSearch = searchTerm.toLowerCase();
-      const filtered = products.filter(product =>
+      const filtered = products.filter((product) =>
         product.name.toLowerCase().includes(lowerSearch)
       );
       setFilteredProducts(filtered);
@@ -30,7 +30,7 @@ function ProductsPage() {
   }, [searchTerm, products]);
 
   const handleEdit = (id) => {
-    navigate('/edit-product', { state: { productId: id } });
+    navigate(`/edit-product/${id}`);
   };
 
   return (
@@ -59,7 +59,7 @@ function ProductsPage() {
           </thead>
           <tbody>
             {filteredProducts.length > 0 ? (
-              filteredProducts.map(product => (
+              filteredProducts.map((product) => (
                 <tr key={product.id}>
                   <td>
                     {product.image && (
