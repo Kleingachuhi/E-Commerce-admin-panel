@@ -1,63 +1,118 @@
-# 🛍️ E-Commerce Admin Panel 
+🛍️ E-Commerce Admin Panel
+Hey there! 👋
+Welcome to the E-Commerce Admin Dashboard — a React-powered application that enables admins to manage products through a clean and intuitive interface.
 
-Hey there! 👋\
-Welcome to my **E-Commerce Admin Dashboard** — a  React app that lets admins manage products using a clean, simple interface.
+🚀 Features
+Manage your e-commerce inventory effortlessly with features like:
 
-&#x20;
+✅ View Products – Browse all listed items in a user-friendly table
 
-## 🚀 What It Can Do
+➕ Add Products – Add new items using a straightforward form
 
-- ✅ View all products 
-- ➕ Add a new product
-- ✏️ Edit an existing product
-- 🗑️ Delete a product
-- 🔁 Navigate between pages without reloading 
+✏️ Edit Products – Update existing items with ease
 
----
+🗑️ Delete Products – Remove items in a single click
 
-## 📁 Pages Included
+🔁 Client-Side Routing – Navigate seamlessly without full-page reloads
 
-- **Products List** – shows a table of all products with edit/delete buttons
-- **Add Product** – form to add new items
-- **Edit Product** – form pre-filled with product data to update
-- **Login Page** – simple login screen 
+🔐 User Authentication – Simple login system using mock user data
 
----
+📁 Pages Included
+🗂️ Products List – Displays all products with options to edit or delete
 
-## 🛠 Tech Elements :
+➕ Add Product – Form to create new products
 
-- [React](https://reactjs.org/)
-- [React Router DOM](https://reactrouter.com/)
-- [JSON Server](https://github.com/typicode/json-server) 
-- Plain CSS for styling 
+🛠️ Edit Product – Form pre-filled with existing product data
 
----
+🔐 Login Page – Basic login screen for admin access
 
-## 📦 How to Run This Project
+🏠 Note: When you open the app in your browser, the Home Page (Products List) is shown by default.
+Users must log in to access the dashboard — upon successful login, they are redirected to the Home Page.
 
-1. **Clone the repo**
+👥 Login Credentials
+To access the dashboard, log in using one of the following test accounts:
 
-   ```bash
-   git clone https://github.com/your-username/ecommerce-admin-panel.git
-   cd ecommerce-admin-panel
-   ```
+json
+Copy
+Edit
+{
+  "users": [
+    { "id": "1", "username": "abigael", "password": "abigael" },
+    { "id": "2", "username": "klein", "password": "klein" },
+    { "id": "3", "username": "kelly", "password": "kelly" },
+    { "id": "4", "username": "joseph", "password": "joseph" },
+    { "id": "5", "username": "rodgers", "password": "rodgers" }
+  ]
+}
+These are stored in the mock backend powered by JSON Server.
 
-2. **Install dependencies**
+🛠 Tech Stack
+This project was built using:
 
-   ```bash
-   npm install
-   ```
+⚛️ React – Front-end library for building UIs
 
-3. **Start the mock backend**
+🌐 React Router DOM – Navigation without page reloads
 
-   ```bash
-   npx json-server --watch db.json --port 3001
-   ```
+🗃️ JSON Server – Mock backend for REST API
 
-4. **Run the React app**
+🎨 Plain CSS – Simple, responsive styling
 
-   ```bash
-   npm run dev
-   ```
+📦 Getting Started
+Follow these steps to run the project locally:
 
-5. Open [http://localhost:5173](http://localhost:5173) in your browser and you're good to go!
+Clone the repository
+
+bash
+Copy
+Edit
+git clone https://github.com/your-username/ecommerce-admin-panel.git
+cd ecommerce-admin-panel
+Install dependencies
+
+bash
+Copy
+Edit
+npm install
+Start the mock backend
+
+bash
+Copy
+Edit
+json-server --watch db.json --port 3000
+Run the React app
+
+bash
+Copy
+Edit
+npm run dev
+Open your browser
+
+Visit http://localhost:5173 — the home page will load.
+Login using one of the credentials listed above to access the dashboard.
+
+
+📄 License
+This project is licensed under the MIT License.
+Feel free to use, modify, and distribute it for both personal and commercial purposes.
+
+MIT License
+
+Copyright (c) 2025 Klein
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
