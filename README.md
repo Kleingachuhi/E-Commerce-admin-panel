@@ -6,7 +6,9 @@ Welcome to the E-Commerce Admin Dashboard — a simple and clean React app that 
 👉 View Deployed App on Vercel
 
 🖼 Demo
-(Add a GIF here once ready — see below for how to create one)
+![Screencastfrom2025-04-2514-02-00-ezgif com-effects](https://github.com/user-attachments/assets/592ee478-168f-4c79-87cd-83a09e00c94e)
+
+
 
 🚀 Features
 ✅ View Products – See all your products in a neat table layout
