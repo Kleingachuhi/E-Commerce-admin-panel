@@ -2,8 +2,10 @@
 Hey there! 👋
 Welcome to the E-Commerce Admin Dashboard — a simple and clean React app that lets admins manage products with ease. Whether you're adding new items or updating existing ones, this dashboard makes inventory management a breeze!
 
+
 🔗 Live Demo:
-👉 View Deployed App on Vercel
+👉 View Deployed App on Vercel : https://e-commerce-admin-panel-4sy1.vercel.app/
+
 
 🖼 Demo
 ![Screencastfrom2025-04-2514-02-00-ezgif com-effects](https://github.com/user-attachments/assets/592ee478-168f-4c79-87cd-83a09e00c94e)
@@ -23,16 +25,18 @@ Welcome to the E-Commerce Admin Dashboard — a simple and clean React app that 
 
 🔐 Login System – Basic authentication with sample user accounts
 
+
+
 📁 Pages Included
-🗂️ Products List – View, edit, or delete products
+🗂️ Products List – View or edit products
 
 ➕ Add Product – Add new product with a simple form
 
 🛠️ Edit Product – Update product info using a pre-filled form
 
-🔐 Login Page – Sign in to access the dashboard
+🔐 Login Page – Sign in to access the dashboard. It redirects to the home page --> navigates
 
-🏠 Note: When the app loads, it shows the Products List — but you must log in first.
+🏠 Note: When the app loads, you must log in first.
 
 👥 Login Credentials
 Use any of these test accounts to sign in:
@@ -50,9 +54,12 @@ Edit
   ]
 }
 These accounts are stored in a mock backend using JSON Server.
+Type in the username which is the same as the password and click on the log in button.
 
-🛠 Tech Stack
-⚛️ React – For the frontend UI
+
+🛠 Tech Stack.
+
+⚛️ React – For the frontend User Interface
 
 🌐 React Router DOM – For routing and navigation
 
@@ -61,6 +68,7 @@ These accounts are stored in a mock backend using JSON Server.
 🎨 Plain CSS – Simple, responsive styling
 
 ▲ Vercel – Used for deploying the app online
+
 
 📦 Getting Started
 1. Clone the project
