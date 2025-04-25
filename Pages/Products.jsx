@@ -13,7 +13,7 @@ function ProductsPage() {
       .then((data) => {
         setProducts(data);
         setFilteredProducts(data); 
-            })
+      })
       .catch((err) => console.error('Error fetching products:', err));
   }, []);
 
