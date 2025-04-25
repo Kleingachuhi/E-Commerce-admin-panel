@@ -1,36 +1,39 @@
 🛍️ E-Commerce Admin Panel
 Hey there! 👋
-Welcome to the E-Commerce Admin Dashboard — a React-powered application that enables admins to manage products through a clean and intuitive interface.
+Welcome to the E-Commerce Admin Dashboard — a simple and clean React app that lets admins manage products with ease. Whether you're adding new items or updating existing ones, this dashboard makes inventory management a breeze!
+
+🔗 Live Demo:
+👉 View Deployed App on Vercel
+
+🖼 Demo
+(Add a GIF here once ready — see below for how to create one)
 
 🚀 Features
-Manage your e-commerce inventory effortlessly with features like:
+✅ View Products – See all your products in a neat table layout
 
-✅ View Products – Browse all listed items in a user-friendly table
+➕ Add Products – Use a user-friendly form to add new items
 
-➕ Add Products – Add new items using a straightforward form
+✏️ Edit Products – Make changes to existing products easily
 
-✏️ Edit Products – Update existing items with ease
+🗑️ Delete Products – Remove products in just one click
 
-🗑️ Delete Products – Remove items in a single click
+🔁 Client-Side Routing – Smooth navigation without reloading pages
 
-🔁 Client-Side Routing – Navigate seamlessly without full-page reloads
-
-🔐 User Authentication – Simple login system using mock user data
+🔐 Login System – Basic authentication with sample user accounts
 
 📁 Pages Included
-🗂️ Products List – Displays all products with options to edit or delete
+🗂️ Products List – View, edit, or delete products
 
-➕ Add Product – Form to create new products
+➕ Add Product – Add new product with a simple form
 
-🛠️ Edit Product – Form pre-filled with existing product data
+🛠️ Edit Product – Update product info using a pre-filled form
 
-🔐 Login Page – Basic login screen for admin access
+🔐 Login Page – Sign in to access the dashboard
 
-🏠 Note: When you open the app in your browser, the Home Page (Products List) is shown by default.
-Users must log in to access the dashboard — upon successful login, they are redirected to the Home Page.
+🏠 Note: When the app loads, it shows the Products List — but you must log in first.
 
 👥 Login Credentials
-To access the dashboard, log in using one of the following test accounts:
+Use any of these test accounts to sign in:
 
 json
 Copy
@@ -44,57 +47,46 @@ Edit
     { "id": "5", "username": "rodgers", "password": "rodgers" }
   ]
 }
-These are stored in the mock backend powered by JSON Server.
+These accounts are stored in a mock backend using JSON Server.
 
 🛠 Tech Stack
-This project was built using:
+⚛️ React – For the frontend UI
 
-⚛️ React – Front-end library for building UIs
+🌐 React Router DOM – For routing and navigation
 
-🌐 React Router DOM – Navigation without page reloads
-
-🗃️ JSON Server – Mock backend for REST API
+🗃️ JSON Server – Mock backend to simulate a REST API
 
 🎨 Plain CSS – Simple, responsive styling
 
+▲ Vercel – Used for deploying the app online
+
 📦 Getting Started
-Follow these steps to run the project locally:
-
-Clone the repository
-
+1. Clone the project
 bash
 Copy
 Edit
 git clone https://github.com/your-username/ecommerce-admin-panel.git
 cd ecommerce-admin-panel
-Install dependencies
-
-bash
+2. Install dependencies
+nginx
 Copy
 Edit
 npm install
-Start the mock backend
-
-bash
+3. Start the mock backend
+pgsql
 Copy
 Edit
 json-server --watch db.json --port 3000
-Run the React app
-
-bash
+4. Run the React app
+arduino
 Copy
 Edit
 npm run dev
-Open your browser
-
-Visit http://localhost:5173 — the home page will load.
-Login using one of the credentials listed above to access the dashboard.
-
+5. Open in your browser
+Visit: http://localhost:5173
+Login using any of the test credentials above to access the dashboard.
 
 📄 License
-This project is licensed under the MIT License.
-Feel free to use, modify, and distribute it for both personal and commercial purposes.
-
 MIT License
 
 Copyright (c) 2025 Klein
@@ -106,13 +98,13 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
