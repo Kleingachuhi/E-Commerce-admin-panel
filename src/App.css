@@ -951,3 +951,9 @@ body {
 .btn-edit:hover {
   background-color: #3730a3;
 }
+
+.edit-product-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
