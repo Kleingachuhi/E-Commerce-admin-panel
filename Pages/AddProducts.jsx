@@ -17,7 +17,7 @@ function EditProducts() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('https://e-commerce-admin-json.vercel.app/Categories')
+    fetch('http://localhost:3000/Categories')
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error('Error fetching categories:', err));

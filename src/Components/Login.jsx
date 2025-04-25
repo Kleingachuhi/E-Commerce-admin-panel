@@ -9,7 +9,7 @@ function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://e-commerce-admin-json.vercel.app/users")
+    fetch("http://localhost:3000/users")
       .then((response) => response.json())
       .then((data) => setUsers(data))
       .catch((error) => console.log('Error fetching users:', error));
