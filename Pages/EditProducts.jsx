@@ -1,10 +1,11 @@
+
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 function EditProducts() {
   const { productId } = useParams();  
-  const navigate = useNavigate();     
-  const [product, setProduct] = useState({
+    const navigate = useNavigate();     
+      const [product, setProduct] = useState({
     name: '',
     category: '',
     description: '',
@@ -16,7 +17,7 @@ function EditProducts() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/Categories')
+    fetch('https://e-commerce-admin-json.vercel.app/Categories')
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error('Error fetching categories:', err));
@@ -25,7 +26,7 @@ function EditProducts() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/products/${productId}`);
+        const response = await fetch(`https://e-commerce-admin-json.vercel.app/products/${productId}`);
         if (!response.ok) throw new Error('Product not found');
         const data = await response.json();
         setProduct(data); 
@@ -62,7 +63,7 @@ function EditProducts() {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/products/${productId}`, {
+      const response = await fetch(`https://e-commerce-admin-json.vercel.app/products/${productId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -124,7 +125,7 @@ function EditProducts() {
               onChange={handleInputChange}
               placeholder="Enter product price"
               step="1000"
-              min="0"
+              min="100"
               required
             />
           </div>

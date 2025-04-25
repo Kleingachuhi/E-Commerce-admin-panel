@@ -1,156 +1,172 @@
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+export default function AddProduct() {
+  const navigate = useNavigate();
 
-function EditProducts() {
-  const { productId } = useParams();  
-    const navigate = useNavigate();     
-      const [product, setProduct] = useState({
+  const [product, setProduct] = useState({
     name: '',
-    category: '',
     description: '',
     price: '',
+    stock: '',
+    sku: '',
     image: '',
-    sku: ''
+    category: ''
   });
+
   const [categories, setCategories] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [imagePreview, setImagePreview] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/Categories')
+    fetch('https://e-commerce-admin-json.vercel.app/Categories')
       .then((res) => res.json())
       .then((data) => setCategories(data))
-      .catch((err) => console.error('Error fetching categories:', err));
+      .catch(console.error);
   }, []);
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const response = await fetch(`http://localhost:3000/products/${productId}`);
-        if (!response.ok) throw new Error('Product not found');
-        const data = await response.json();
-        setProduct(data); 
-      } catch (error) {
-        console.error('Error fetching product:', error);
-        navigate('/products');  
-      }
-    };
-
-    if (productId) {
-      fetchProduct();
-    }
-  }, [productId, navigate]);
-
-  const handleInputChange = (e) => {
+  function handleChange(e) {
     const { name, value } = e.target;
     setProduct((prev) => ({ ...prev, [name]: value }));
-  };
 
-  const handleSubmit = async (e) => {
+    if (name === 'image') {
+      setImagePreview(value);
+    }
+  }
+
+  function generateSKU() {
+    const prefix = product.name.substring(0, 3).toUpperCase();
+    const randomNum = Math.floor(100 + Math.random() * 900);
+    const newSku = `${prefix}-${randomNum}`;
+    setProduct((prev) => ({ ...prev, sku: newSku }));
+  }
+
+  async function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
     setError('');
 
     if (!product.name || !product.price || !product.category) {
       setError('Name, price, and category are required.');
+      setIsLoading(false);
       return;
     }
 
-    try {
-      const response = await fetch(`http://localhost:3000/products/${productId}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(product),
-      });
+    const productWithDate = {
+      ...product,
+      createdAt: new Date().toISOString()
+    };
 
-      if (!response.ok) throw new Error('Update failed');
-      navigate('/products');  
-    } catch (error) {
-      console.error('Error updating product:', error);
-      setError('Failed to update product.');
+    try {
+      const response = await axios.post('https://e-commerce-admin-json.vercel.app/products', productWithDate);
+      if (response.status === 201) {
+        navigate('/products');
+      }
+    } catch (err) {
+      setError(err.response?.data?.message || err.message || 'Failed to create product.');
+    } finally {
+      setIsLoading(false);
     }
-  };
+  }
 
   return (
-    <div className="edit-product-container">
-      <h1>Sales Dashboard</h1>
-      
-      <div className="product-nav">
-        <button onClick={() => navigate('/add-product')}>Add Product</button>
-        <button onClick={() => navigate('/products')}>Back to Products</button>
-      </div>
+    <div className="product-form-card">
+      <h2 className="form-header">New Product</h2>
 
-      <hr className="divider" />
-
-      <div className="edit-product-form">
-        <h2>Edit Product</h2>
-
+      <form onSubmit={handleSubmit} className="product-form">
         {error && <div className="error-message">{error}</div>}
 
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Product Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={product.name}
-              onChange={handleInputChange}
-              placeholder="Enter product name"
-              required
-            />
-          </div>
+        <div className="form-group">
+          <h3 className="section-title">Product Name</h3>
+          <input
+            type="text"
+            name="name"
+            value={product.name}
+            onChange={handleChange}
+            placeholder="Insert product name"
+            className="form-input"
+            required
+          />
+        </div>
 
-          <div className="form-group">
-            <label htmlFor="description">Description</label>
-            <textarea
-              id="description"
-              name="description"
-              value={product.description}
-              onChange={handleInputChange}
-              placeholder="Enter product description"
-              required
-            />
-          </div>
+        <div className="form-group">
+          <h3 className="section-title">Product Description</h3>
+          <textarea
+            name="description"
+            value={product.description}
+            onChange={handleChange}
+            placeholder="Brief description of the product"
+            className="form-textarea"
+            rows="4"
+          />
+        </div>
 
+        <div className="form-row">
           <div className="form-group">
-            <label htmlFor="price">Price</label>
+            <h3 className="section-title">Product Price ($)</h3>
             <input
               type="number"
-              id="price"
               name="price"
               value={product.price}
-              onChange={handleInputChange}
-              placeholder="Enter product price"
-              step="0.01"
+              onChange={handleChange}
+              placeholder="Insert product price"
+              className="form-input"
+              step="1000"
+              min="100"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <h3 className="section-title">Stock Quantity</h3>
+            <input
+              type="number"
+              name="stock"
+              value={product.stock}
+              onChange={handleChange}
+              placeholder="Insert stock quantity"
+              className="form-input"
               min="0"
               required
             />
           </div>
+        </div>
 
+        <div className="form-row">
           <div className="form-group">
-            <label htmlFor="sku">SKU</label>
-            <input
-              type="text"
-              id="sku"
-              name="sku"
-              value={product.sku}
-              onChange={handleInputChange}
-              placeholder="Enter SKU"
-            />
+            <h3 className="section-title">SKU</h3>
+            <div className="sku-input-group">
+              <input
+                type="text"
+                name="sku"
+                value={product.sku}
+                onChange={handleChange}
+                placeholder="Product SKU"
+                className="form-input"
+                required
+              />
+              <button
+                type="button"
+                onClick={generateSKU}
+                className="generate-sku-btn"
+              >
+                Generate
+              </button>
+            </div>
           </div>
 
           <div className="form-group">
-            <label htmlFor="category">Category</label>
+            <h3 className="section-title">Category</h3>
             <select
-              id="category"
               name="category"
               value={product.category}
-              onChange={handleInputChange}
+              onChange={handleChange}
+              className="form-select"
               required
             >
-              <option value="">Select Category</option>
+              <option value="">Select category</option>
               {categories.map((category) => (
                 <option key={category.name} value={category.name}>
                   {category.name}
@@ -158,31 +174,40 @@ function EditProducts() {
               ))}
             </select>
           </div>
+        </div>
 
-          <div className="form-group">
-            <label htmlFor="image">Image URL</label>
-            <input
-              type="text"
-              id="image"
-              name="image"
-              value={product.image}
-              onChange={handleInputChange}
-              placeholder="Enter image URL"
-            />
-            {product.image && (
-              <div className="image-preview">
-                <img src={product.image} alt="Product" className="preview-image" />
-              </div>
-            )}
-          </div>
+        <div className="form-group">
+          <h3 className="section-title">Product Image</h3>
+          <input
+            type="text"
+            name="image"
+            value={product.image}
+            onChange={handleChange}
+            placeholder="Paste image URL"
+            className="form-input"
+          />
+          {imagePreview && (
+            <div className="image-preview">
+              <img
+                src={imagePreview}
+                alt="Product preview"
+                className="preview-image"
+              />
+              <div className="image-overlay">Preview</div>
+            </div>
+          )}
+        </div>
 
-          <div className="form-actions">
-            <button type="submit">Update Product</button>
-          </div>
-        </form>
-      </div>
+        <div className="form-actions">
+          <button
+            type="submit"
+            className="create-product-btn"
+            disabled={isLoading}
+          >
+            {isLoading ? 'Creating...' : 'Create Product'}
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
-
-export default EditProducts;
