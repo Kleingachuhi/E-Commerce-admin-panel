@@ -9,10 +9,10 @@ import NavBar from './Components/NavBar.jsx'
 import Products from '../Pages/Products.jsx'
 import AddProducts from '../Pages/AddProducts.jsx'
 import EditProducts from '../Pages/EditProducts.jsx'
-import HomeNav from '../NavBars/HomeNav.jsx'
-import AddNav from '../NavBars/AddNav.jsx'
-import EditNav from '../NavBars/EditNav.jsx'
-import ProductsNav from '../NavBars/ProductsNav.jsx'
+import HomeNav from './Components/NavBars/HomeNav.jsx'
+import ProductsNav from './Components/NavBars/ProductsNav'
+import AddNav from './Components/NavBars/AddNav.jsx'
+import EditNav from './Components/NavBars/EditNav.jsx'
 const router = createBrowserRouter(
   [
     {
