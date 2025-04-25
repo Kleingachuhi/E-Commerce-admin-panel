@@ -21,7 +21,7 @@ export default function AddProduct() {
   const [imagePreview, setImagePreview] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/Categories')
+    fetch('https://e-commerce-admin-json.vercel.app/Categories')
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch(console.error);
