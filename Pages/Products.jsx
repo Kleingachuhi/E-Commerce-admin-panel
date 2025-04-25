@@ -8,12 +8,12 @@ function ProductsPage() {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/products')
+    fetch('https://e-commerce-admin-json.vercel.app/products')
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
         setFilteredProducts(data); 
-            })
+      })
       .catch((err) => console.error('Error fetching products:', err));
   }, []);
 

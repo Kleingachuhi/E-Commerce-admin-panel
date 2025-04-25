@@ -3,8 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 function EditProducts() {
   const { productId } = useParams();  
-    const navigate = useNavigate();     
-      const [product, setProduct] = useState({
+  const navigate = useNavigate();     
+  const [product, setProduct] = useState({
     name: '',
     category: '',
     description: '',
@@ -16,7 +16,7 @@ function EditProducts() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/Categories')
+    fetch('https://e-commerce-admin-json.vercel.app/Categories')
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error('Error fetching categories:', err));
@@ -25,25 +25,7 @@ function EditProducts() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const mockProducts = [
-          {
-            id: '1',
-            name: 'Vintage Leather Bag',
-            category: 'Bags',
-            description: 'The vintage leather bag is handcrafted from premium full-pitch leather, offering durability and timeless style. Its spacious interior and translational products make it perfect for everyday use or travel. The bag features sturdy handles and an adjustable shoulder strap for comfortable carrying. With its rustic palate and unique character, this bag adds a touch of sophisticated any outfit. Available in various colors, it\'s a must-have accessory for both men and women who appreciate quality and style.',
-            price: '85.00',
-            sku: 'V18-001'
-          }
-        ];
-        
-        const foundProduct = mockProducts.find(p => p.id === productId);
-        if (foundProduct) {
-          setProduct(foundProduct);
-        } else {
-          console.error('Product not found');
-          navigate('/products');
-        }
-        const response = await fetch(`http://localhost:3000/products/${productId}`);
+        const response = await fetch(`https://e-commerce-admin-json.vercel.app/products/${productId}`);
         if (!response.ok) throw new Error('Product not found');
         const data = await response.json();
         setProduct(data); 
@@ -80,7 +62,7 @@ function EditProducts() {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/products/${productId}`, {
+      const response = await fetch(`https://e-commerce-admin-json.vercel.app/products/${productId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -141,7 +123,7 @@ function EditProducts() {
               value={product.price}
               onChange={handleInputChange}
               placeholder="Enter product price"
-              step="0.01"
+              step="1000"
               min="0"
               required
             />

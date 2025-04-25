@@ -9,12 +9,10 @@ function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("https://e-commerce-admin-json.vercel.app/users")
       .then((response) => response.json())
       .then((data) => setUsers(data))
-      .catch((error) => {
-        console.log('Error fetching users:', error);
-      });
+      .catch((error) => console.log('Error fetching users:', error));
   }, []);
 
   function handleClick() {
@@ -35,7 +33,6 @@ function Login() {
         alert("Please key in the correct details");
       }
 
-      console.log(matchedUser);
       setLoading(false);
     }, 2500);
   }
