@@ -20,7 +20,7 @@ export default function AddProduct() {
   const [imagePreview, setImagePreview] = useState('');
 
   useEffect(() => {
-    fetch('https://e-commerce-admin-json.vercel.app/Categories')
+    fetch('https://e-commerce-admin-panel-but-now-the.onrender.com/api/categories/')
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch(console.error);
@@ -59,7 +59,7 @@ export default function AddProduct() {
     };
 
     try {
-      const response = await axios.post('https://e-commerce-admin-json.vercel.app/products', productWithDate);
+      const response = await axios.post('https://e-commerce-admin-panel-but-now-the.onrender.com/api/products', productWithDate);
       if (response.status === 201) {
         navigate('/products');
       }
@@ -210,3 +210,6 @@ export default function AddProduct() {
     </div>
   );
 }
+
+
+AddProduct.jsx
